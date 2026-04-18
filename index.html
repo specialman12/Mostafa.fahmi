@@ -1,0 +1,485 @@
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Darshfahmi Profile</title>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&display=swap" rel="stylesheet">  <style>  
+
+
+
+
+/* المحتوى مخفي في البداية */
+/* المحتوى مخفي تماما في البداية */
+body > *:not(#overlay) {
+  opacity: 0;           /* مخفي */
+  
+  
+}
+
+
+/* الستارة بالبلور */
+/* الستارة بالبلور */
+/* الستارة بالبلور */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+/* محتوى الستارة */
+.overlay-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* اللوغو مع حركة خفيفة */
+.overlay-logo {
+  width: 250px; /* حجم اللوغو */
+  height: auto;
+  display: block;
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* نص "دوس هنا" بسيط */
+.overlay-text {
+  color: #fff;
+  font-size: 2.5rem;
+  animation: logoFloat 2s ease-in-out infinite;
+}
+
+/* حركة اللوغو */
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+/* ===== Reset & Font ===== */  
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}  
+/* منع تأثير التحديد الأزرق عند الضغط على الموبايل */  
+* {  
+  -webkit-tap-highlight-color: transparent; /* Chrome, Safari, Opera */  
+  -webkit-touch-callout: none; /* iOS: منع القائمة عند الضغط الطويل */  
+  user-select: none; /* منع تحديد النص عند اللمس */  
+  outline: none; /* منع أي خط خارجي عند الضغط */  
+}  
+body{    
+  min-height:100vh;    
+  display:flex;  
+  flex-direction:column;  
+  justify-content:center;  
+  align-items:center;  
+  gap:25px;  
+  background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),  
+             url("background.jpg") center/cover fixed;  
+  color:#fff;  
+  
+}  
+  
+/* ===== Glass Card ===== */  
+/* ===== Glass Card ===== */  
+.glass{
+  width: min(92vw, 520px); /* 🔥 يتوسع على الديسكتوب */
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+  transition:all 0.4s ease;
+  transform-style: preserve-3d;
+  animation:fadeIn 1s ease forwards;
+} 
+  
+/* الغي التفاعل على hover */  
+.glass:hover{  
+  transform: scale(0.98);  
+  border-radius: 20px;  
+}   
+  
+.glass:hover {  
+  box-shadow: 0px 0px 30px 1px #F7F8FF;  
+}   
+  
+/* ===== Profile ===== */  
+.profile{  
+  padding:35px 25px;  
+  text-align:center;  
+  position:relative;  
+  cursor:pointer;  
+  transition:0.3s;  
+}  
+.profile:hover .logo{  
+  
+}  
+.logo{  
+  width:200px;    
+  display:block;    
+  margin:0 auto 10px;    
+    
+}  
+.profile h1{  
+  margin-top:0px;  
+  font-size:2rem;  
+  letter-spacing:2px;  
+  color: #fff; /* اللون الأبيض */  
+  text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff; /* توهج أبيض ثابت */  
+}   
+.profile p{  
+  font-size:.95rem;  
+  opacity:.85;  
+  margin:12px 0 20px;  
+  line-height:1.4;  
+}  
+.social{  
+  display:flex;  
+  justify-content:center;  
+  gap:18px;  
+  text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff; /* توهج أبيض ثابت */  
+}  
+.social a{  
+  color:#fff;  
+  font-size:2.6rem;  
+  transition:.3s;  
+  position:relative;  
+}  
+.social a:hover{  
+  transform:scale(1.3) rotate(10deg);  
+  color:#ffdd55;  
+  text-shadow:0 0 8px #ffdd55, 0 0 15px #ffdd55;  
+}  
+  .img-icon-wrap {
+  position: relative; /* مرجع للحركة */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الصورة نفسها */
+.icon-img {
+  width: 60px;   /* 🔥 حجم */
+  height: 60px;
+  
+
+  /* 🔥 تحكم في المكان */
+  position: relative;
+  top: -4px;        /* فوق / تحت */
+  left: 9px;       /* يمين / شمال */
+
+  transition: 0.3s ease;
+}
+
+/* Hover */
+.img-icon-wrap:hover .icon-img {
+  transform: scale(1.3) rotate(10deg);
+} 
+
+/* ===== Views ===== */  
+.views{  
+  position:absolute;  
+  bottom:15px;  
+  left:20px;  
+  font-size:.85rem;  
+  opacity:.8;  
+  display:flex;  
+  gap:6px;  
+  align-items:center;  
+}  
+.views i{  
+  animation:eyeGlow 2s infinite alternate;  
+}  
+  
+/* ===== Player ===== */  
+.player{  
+  padding:20px;  
+  display:flex;  
+  align-items:center;  
+  gap:15px;  
+  direction:ltr;  
+  cursor:pointer;  
+  transition:0.3s;  
+  box-shadow: 0px 0px 30px 1px #F7F8FF;  
+}  
+.player:hover{  
+  transform:scale(1.03);  
+  box-shadow:0 25px 60px rgba(0,0,0,.6), 0 0 40px rgba(255,255,255,.2) inset;  
+}  
+.player:hover{  
+  transform: scale(0.98);  
+  border-radius: 20px;  
+}   
+  
+.player:hover {  
+  box-shadow: 0px 0px 30px 1px #ffdd55;  
+}    
+.player i.music{  
+  font-size:2.2rem;  
+  opacity:.9;  
+  animation:musicBounce 1.5s infinite;  
+  color: #fff; /* اللون الأبيض */  
+  text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff; /* توهج أبيض ثابت */  
+}  
+  
+.info{flex:1}  
+.title{  
+  font-size:1rem;  
+  font-weight:700;  
+  text-transform:capitalize;  
+  animation:textGlow 2s infinite alternate;  
+}  
+  
+.progress-wrap{  
+  display:flex;  
+  align-items:center;  
+  gap:6px;  
+  font-size:.75rem;  
+  margin-top:6px;  
+}  
+.bar{  
+  flex:1;  
+  height:5px;  
+  background:rgba(255,255,255,.25);  
+  border-radius:10px;  
+  cursor:pointer;  
+  overflow:hidden;  
+}  
+.fill{  
+  height:100%;  
+  width:0%;  
+  background:#ffdd55;  
+  transition:width 0.2s linear;  
+}  
+.controls{  
+  display:flex;  
+  gap:15px;  
+  font-size:1.4rem;  
+}  
+.controls i{  
+  cursor:pointer;  
+  transition:.3s;  
+  color:#fff;  
+}  
+.controls i:hover{  
+  transform:scale(1.3) rotate(15deg);  
+  color:#ffdd55;  
+  text-shadow:0 0 8px #ffdd55,0 0 20px #ffdd55;  
+}  
+  
+/* ===== Animations ===== */  
+@keyframes fadeIn{  
+  0%{opacity:0; transform:translateY(20px);}  
+  100%{opacity:1; transform:translateY(0);}  
+}  
+@keyframes eyeGlow{  
+  0%{color:#fff;}  
+  50%{color:#ffdd55;}  
+  100%{color:#fff;}  
+}  
+@keyframes musicBounce{  
+  0%,100%{transform:translateY(0);}  
+  50%{transform:translateY(-8px);}  
+}  
+@keyframes textGlow{  
+  0%{color:#fff; text-shadow:none;}  
+  50%{color:#ffdd55; text-shadow:0 0 10px #ffdd55,0 0 20px #ffdd55;}  
+  100%{color:#fff; text-shadow:none;}  
+  
+  
+.icon-img {
+  width: 40px;       /* حجم الأيقونة النهائي */
+  height: 40px;      /* نفس الارتفاع عشان تبقى مربعة */
+  object-fit: contain; /* يحافظ على نسبة الصورة بدون تشويه */
+  display: block;     /* يمنع أي مسافة تحت الصورة */
+  transition: transform 0.3s; /* تأثير عند hover */
+} 
+
+.social a:hover .icon-img {
+  transform: scale(1.2); /* تكبير خفيف عند المرور */
+}
+a:hover .icon-img {
+  transform: scale(1.2); /* تكبير خفيف عند المرور */
+} 
+
+}  
+</style>  </head>  <body> 
+<div id="overlay" onclick="enterSite()">
+  <div class="overlay-content">
+    <img src="logo-ar.png" alt="Logo" class="overlay-logo">
+        <div class="overlay-text">استغفر ربنا</div>
+    <div class="overlay-text">دوس هنا</div>
+  </div>
+</div>
+
+
+<!-- PROFILE CARD -->
+<div class="glass profile">
+  <img src="logo-ar.png" class="logo" alt="logo">
+  <h1>Darshfahmi</h1>
+  <p>Graphic Designer & Web Developer<br>Malik Brand Drmatools</p>
+  
+  <div class="social">
+    <a href="https://facebook.com/darshfahmi"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com/darshfahmi"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com/darshfahmi"><i class="fab fa-tiktok"></i></a>
+    
+    <a href="https://drmatools.shop" class="custom-icon-wrap">
+      <img src="drmatools.png" class="icon-img" alt="Drmatools">
+    </a>
+       <a href="https://www.qrstore.store" class="custom-icon-wrap">
+      <img src="qrstore.png" class="icon-img" alt="Drmatools">
+    </a>
+  </div>
+</div>
+
+<!-- Mouse Hover Tracker -->
+<div class="cursor"></div>
+</div>  <!-- MUSIC PLAYER -->  <div class="glass player">  
+  <i class="fa-solid fa-music music"></i>    <div class="info">  
+    <div class="title" id="title">Loading...</div>  
+    <div class="progress-wrap">  
+      <span id="current">0:00</span>  
+      <div class="bar" id="bar">  
+        <div class="fill" id="fill"></div>  
+      </div>  
+      <span id="duration">0:00</span>  
+    </div>  
+  </div>    <div class="controls">  
+    <i class="fa-solid fa-backward-step" id="prev"></i>  
+    <i class="fa-solid fa-play" id="play"></i>  
+    <i class="fa-solid fa-forward-step" id="next"></i>  
+  </div>  <audio id="audio"></audio>
+
+<script>  
+const audio = document.getElementById("audio");  
+const play = document.getElementById("play");  
+const prev = document.getElementById("prev");  
+const next = document.getElementById("next");  
+const title = document.getElementById("title");  
+const fill = document.getElementById("fill");  
+const bar = document.getElementById("bar");  
+const current = document.getElementById("current");  
+const duration = document.getElementById("duration");  
+  
+const playlist = [  
+  { name:"Chill Beat", src:"amr1.mp3" },  
+  { name:"Night Vibes", src:"amr2.mp3" },  
+  { name:"amr Diab", src:"amr3.mp3" },  
+  { name:"amr Diab", src:"amr4.mp3" },  
+  { name:"Deep Mood", src:"audio.mp3" }   
+];  
+  
+let index = 0;  
+  
+function load(i){  
+  audio.src = playlist[i].src;  
+  title.textContent = playlist[i].name;  
+}  
+load(index);  
+  
+/* تشغيل الأغنية بعد أول تفاعل للمستخدم */  
+function tryPlay() {  
+  audio.play().catch(()=>{});  
+  // إزالة المستمع بعد أول تشغيل  
+  window.removeEventListener("click", tryPlay);  
+  window.removeEventListener("touchstart", tryPlay);  
+}  
+window.addEventListener("click", tryPlay);  
+window.addEventListener("touchstart", tryPlay);  
+  
+/* PLAY / PAUSE */  
+play.onclick = ()=>{  
+  if(audio.paused){  
+    audio.play();  
+    play.classList.replace("fa-play","fa-pause");  
+  }else{  
+    audio.pause();  
+    play.classList.replace("fa-pause","fa-play");  
+  }  
+};  
+  
+/* NEXT / PREV */  
+next.onclick = ()=>{  
+  index = (index+1)%playlist.length;  
+  load(index);  
+  audio.play();  
+  play.classList.replace("fa-play","fa-pause");  
+};  
+  
+prev.onclick = ()=>{  
+  index = (index-1+playlist.length)%playlist.length;  
+  load(index);  
+  audio.play();  
+  play.classList.replace("fa-play","fa-pause");  
+};  
+  
+/* PROGRESS */  
+audio.ontimeupdate = ()=>{  
+  const p = (audio.currentTime/audio.duration)*100;  
+  fill.style.width = p+"%";  
+  current.textContent = format(audio.currentTime);  
+  duration.textContent = format(audio.duration);  
+};  
+  
+bar.onclick = e=>{  
+  audio.currentTime = (e.offsetX/bar.clientWidth)*audio.duration;  
+};  
+  
+audio.onended = ()=> next.onclick();  
+  
+function format(t){  
+  if(!t) return "0:00";  
+  let m = Math.floor(t/60);  
+  let s = Math.floor(t%60);  
+  return m+":"+(s<10?"0"+s:s);  
+}  
+
+
+
+
+
+function enterSite(){
+  const overlay = document.getElementById("overlay");
+
+  // عمل Fade-out للستارة
+  overlay.style.opacity = "0";
+
+  overlay.addEventListener("transitionend", ()=>{
+    overlay.remove();
+
+    // إظهار المحتوى بشكل طبيعي بعد إزالة الستارة
+    document.querySelectorAll("body > *:not(#overlay)").forEach(el=>{
+      el.style.opacity = "1";
+      el.style.pointerEvents = "auto";
+      el.style.transform = "translateY(0)";
+    });
+
+    // تشغيل الأغنية
+    audio.play().then(()=>{
+      play.classList.replace("fa-play","fa-pause");
+    }).catch(()=>{});
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>  </body>  
+</html>
